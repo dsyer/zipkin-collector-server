@@ -1,0 +1,17 @@
+server:
+  port: 9402
+spring:
+  datasource:
+    platform: h2
+  cloud:
+    stream:
+      bindings:
+        input: output
+  zipkin:
+    enabled: false
+
+---
+spring:
+  profiles: mysql
+  datasource:
+    platform: mysql
