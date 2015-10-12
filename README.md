@@ -13,7 +13,7 @@ Code is [here](https://github.com/dsyer/zipkin-collector-server).
 Bind to MySQL and the same Stream service that you did in the apps (rabbit, redis, kafka). Set `spring.datasource.initialize=true` the first time you start to initialize the database. Alternatively, curl it:
 
 ```
-$ $ curl  zipkin-server.cfapps.io/env -d endpoints.restart.enabled=true
+$ curl  zipkin-server.cfapps.io/env -d endpoints.restart.enabled=true
 $ curl  zipkin-server.cfapps.io/env -d spring.datasource.initialize=true
 $ curl  zipkin-server.cfapps.io/restart -d {}
 ```
