@@ -25,23 +25,11 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
-				<groupId>org.jooq</groupId>
-				<artifactId>jooq</artifactId>
-				<version>3.7.0</version>
-			</dependency>
 			<!-- TODO: make sure these are added to Brixton -->
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-stream-parent</artifactId>
-				<version>1.0.0.BUILD-SNAPSHOT</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-sleuth</artifactId>
-				<version>1.0.0.BUILD-SNAPSHOT</version>
+				<artifactId>spring-cloud-starter-parent</artifactId>
+				<version>Brixton.BUILD-SNAPSHOT</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

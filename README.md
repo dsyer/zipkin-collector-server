@@ -1,4 +1,4 @@
-# Running Zipkip on Cloud Foundry
+# Running Zipkin on Cloud Foundry
 
 We have a running instance on PWS: http://zipkin-web.cfapps.io. It is backed by a `zipkin-java-server` with a MySQL backend and RabbitMQ (Spring Cloud Stream) for span transport.
 
@@ -19,6 +19,8 @@ $ curl  zipkin-server.cfapps.io/restart -d {}
 ```
 
 Uses the `zipkin-server` jar from the [OSS](https://github.com/openzipkin/zipkin-java) as well as `spring-cloud-sleuth-stream`.
+
+> NOTE: running locally you don't need MySQL (the default span store is in memory). You could even run in PWS without MySQL just by removing the `zipkin.store.type` setting.
 
 ## Web UI
 
