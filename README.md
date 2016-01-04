@@ -27,13 +27,13 @@ Uses the `zipkin-server` jar from the [OSS](https://github.com/openzipkin/zipkin
 Get the jar from the [OSS](https://github.com/openzipkin/zipkin) and push it:
 
 ```
-$ cf push zipkin-web -p zipkin-web/build/libs/zipkin-web*all.jar
+$ cf push zipkin-web -p zipkin-web/build/libs/zipkin-web*all.jar -b java_buildpack --no-start
 ```
 
 It needs an environment variable to set the command line args:
 
 ```
-$ cf set-env zipkin-web JBP_CONFIG_JAVA_MAIN '{arguments: "-zipkin.web.port=:\$PORT -zipkin.web.rootUrl=/ -zipkin.web.query.dest=zipkin-server.cfapps.io:80 -zipkin.web.resourcesRoot=."}'
+$ cf set-env zipkin-web JBP_CONFIG_JAVA_MAIN '{arguments: "-zipkin.web.port=:$PORT -zipkin.web.rootUrl=/ -zipkin.web.query.dest=zipkin-server.cfapps.io:80"}'
 ```
 
 NOTE: `JBP_CONFIG_JAVA_MAIN` only works with Java buildpack v3.2 and above (so not in PEZ Heritage right now).
